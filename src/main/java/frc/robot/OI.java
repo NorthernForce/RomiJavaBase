@@ -19,6 +19,6 @@ public class OI {
     }
 
     public static void mapButtons() {
-        new JoystickButton(driverController, XboxController.Button.kB.value).whenPressed(new SetServo1());
+        new JoystickButton(driverController, XboxController.Button.kB.value).whileActiveOnce(new SetServo1());
     }
 }
