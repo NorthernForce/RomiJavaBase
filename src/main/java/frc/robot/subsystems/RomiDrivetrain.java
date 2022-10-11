@@ -10,8 +10,8 @@ import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class RomiDrivetrain extends SubsystemBase {
-  private static final double kCountsPerRevolution = 1440.0;
-  private static final double kWheelDiameterInch = 2.75591; // 70 mm
+  public static final double kCountsPerRevolution = 1440.0;
+  public static final double kWheelDiameterInch = 2.75591; // 70 mm
 
   // The Romi has the left and right motors set to
   // PWM channels 0 and 1 respectively
@@ -40,7 +40,6 @@ public class RomiDrivetrain extends SubsystemBase {
   public void arcadeDrive(double xaxisSpeed, double zaxisRotate) {
     m_diffDrive.arcadeDrive(xaxisSpeed, zaxisRotate);
   }
-
   public void resetEncoders() {
     m_leftEncoder.reset();
     m_rightEncoder.reset();
