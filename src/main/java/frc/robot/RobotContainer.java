@@ -24,16 +24,8 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the button bindings
     romiDrivetrain.setDefaultCommand(new DriveWithJoystick());
-    configureButtonBindings();
+    OI.mapButtons();
   }
-
-  /**
-   * Use this method to define your button->command mappings. Buttons can be created by
-   * instantiating a {@link edu.wpi.first.wpilibj.GenericHID} or one of its subclasses ({@link
-   * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
-   * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
-   */
-  private void configureButtonBindings() {}
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
