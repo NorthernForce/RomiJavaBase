@@ -34,6 +34,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return new DriveRotate(Math.toRadians(90));
+    return new DriveRotate(Math.PI / 2);
   }
 }

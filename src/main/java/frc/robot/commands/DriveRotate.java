@@ -28,9 +28,10 @@ public class DriveRotate extends CommandBase {
     leftController.setSetpoint(radians * romiRadius);
     leftController.setIntegratorRange(-0.5, 0.5);
     rightController.setIntegratorRange(-0.5, 0.5);
-    leftController.setTolerance(0.05, 0.1);
+    leftController.setTolerance(0.05, 0.5);
     rightController.setSetpoint(-radians * romiRadius);
-    rightController.setTolerance(0.05, 0.1);
+    System.out.println("Setpoint: " + radians * romiRadius);
+    rightController.setTolerance(0.05, 0.5);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
