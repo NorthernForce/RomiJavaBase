@@ -27,7 +27,7 @@ public class DriveWithJoystick extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    romiDrivetrain.arcadeDrive(Speeds[0].getAsDouble(), Speeds[1].getAsDouble());
+    romiDrivetrain.drive(Speeds[0].getAsDouble(), Speeds[1].getAsDouble());
   }
 
   // Called once the command ends or is interrupted.
