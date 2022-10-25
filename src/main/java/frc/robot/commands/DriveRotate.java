@@ -8,14 +8,15 @@ import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import static frc.robot.RobotContainer.romiDrivetrain;
 
-public class DriveToDistance extends CommandBase {
+public class DriveRotate extends CommandBase {
   private PIDController leftController, rightController;
-  private final double inches;
+  private final double radians;
+  private final static double romiRadius = 2.93;
   /** Creates a new DefaultAutonomous. */
-  public DriveToDistance(double inches) {
+  public DriveRotate(double radians) {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(romiDrivetrain);
-    this.inches = inches;
+    this.radians = radians;
   }
 
   // Called when the command is initially scheduled.
@@ -24,11 +25,11 @@ public class DriveToDistance extends CommandBase {
     romiDrivetrain.resetEncoders();
     leftController = new PIDController(0.15, 0, 0);
     rightController = new PIDController(0.15, 0, 0);
-    leftController.setSetpoint(inches);
+    leftController.setSetpoint(radians * romiRadius);
     leftController.setIntegratorRange(-0.5, 0.5);
     rightController.setIntegratorRange(-0.5, 0.5);
     leftController.setTolerance(0.05, 0.1);
-    rightController.setSetpoint(inches);
+    rightController.setSetpoint(-radians * romiRadius);
     rightController.setTolerance(0.05, 0.1);
   }
 
