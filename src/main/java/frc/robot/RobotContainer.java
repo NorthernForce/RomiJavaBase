@@ -9,7 +9,9 @@ import frc.robot.commands.auto.DriveToDistance;
 import frc.robot.subsystems.RomiDrivetrain;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
-
+import edu.wpi.first.wpilibj2.command.PrintCommand;
+import edu.wpi.first.wpilibj2.command.WaitCommand;
+import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -34,6 +36,12 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return new DriveToDistance(12);
+    return new PrintCommand("Going Forwards") 
+    .andThen(new DriveToDistance(12))
+    .andThen(new PrintCommand("Going Backwards"))
+    .andThen(new DriveToDistance(-12))
+    .andThen(new PrintCommand("Ended"))
+    ; 
+    //new DriveToDistance(12).andThen(new PrintCommand("A"));
   }
 }
