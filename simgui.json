@@ -19,9 +19,12 @@
   "NTProvider": {
     "types": {
       "/FMSInfo": "FMSInfo",
+      "/LiveWindow/BeamBrake": "Subsystem",
       "/LiveWindow/RomiDrivetrain": "Subsystem",
       "/LiveWindow/ServoController": "Subsystem",
       "/LiveWindow/Ungrouped/DifferentialDrive[1]": "DifferentialDrive",
+      "/LiveWindow/Ungrouped/DigitalInput[8]": "Digital Input",
+      "/LiveWindow/Ungrouped/DigitalInput[9]": "Digital Input",
       "/LiveWindow/Ungrouped/PIDController[10]": "PIDController",
       "/LiveWindow/Ungrouped/PIDController[1]": "PIDController",
       "/LiveWindow/Ungrouped/PIDController[2]": "PIDController",
@@ -36,16 +39,7 @@
     }
   },
   "NetworkTables": {
-    "LiveWindow": {
-      ".status": {
-        "open": true
-      },
-      "RomiDrivetrain": {
-        "open": true
-      },
-      "Ungrouped": {
-        "open": true
-      },
+    "SmartDashboard": {
       "open": true
     }
   }
